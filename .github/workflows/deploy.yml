@@ -30,6 +30,9 @@ jobs:
       # GitHub Pages only serves static files — copy index.html to 404.html
       # so deep links like /teens and /adults load the React app instead of 404.
       - run: npm run build && cp dist/index.html dist/404.html
+        env:
+          # GitHub Pages serves from a subfolder; local + Vercel use '/'
+          BASE_PATH: /NileCodeAcamdy/
 
       - uses: actions/configure-pages@v5
 

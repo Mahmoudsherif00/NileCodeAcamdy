@@ -11,7 +11,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <BrowserRouter basename="/NileCodeAcamdy">
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route element={<PageLayout />}>
               <Route path="/" element={<HomePage />} />
