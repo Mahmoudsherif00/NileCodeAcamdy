@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="lapBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A4B85"/>
+      <stop offset="1" stop-color="#0A2240"/>
+    </linearGradient>
+    <linearGradient id="lapScreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E3158"/>
+      <stop offset="1" stop-color="#071B33"/>
+    </linearGradient>
+    <linearGradient id="lapPlatform" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B5FB8"/>
+      <stop offset="0.6" stop-color="#0E3D8A"/>
+      <stop offset="1" stop-color="#082554"/>
+    </linearGradient>
+    <radialGradient id="lapGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008CFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#008CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lapPool" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3FA9FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3FA9FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lapGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lapSoft" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="lapSoft2" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- ambient glow -->
+  <ellipse cx="320" cy="380" rx="260" ry="210" fill="url(#lapGlow)"/>
+
+  <!-- swirl ring around the lower half (drawn behind laptop first) -->
+  <ellipse cx="320" cy="440" rx="272" ry="86" fill="none" stroke="#00A8FF" stroke-width="10" stroke-opacity="0.20" filter="url(#lapSoft2)"/>
+  <path d="M 48 440 A 272 86 0 0 1 592 440" fill="none" stroke="#2E9BFF" stroke-width="2.5" stroke-opacity="0.4"/>
+
+  <!-- glowing platform disc -->
+  <ellipse cx="320" cy="470" rx="210" ry="52" fill="url(#lapPlatform)" opacity="0.9"/>
+  <ellipse cx="320" cy="470" rx="210" ry="52" fill="none" stroke="url(#lapGlowF)" stroke-opacity="0" />
+  <ellipse cx="320" cy="470" rx="210" ry="52" fill="none" stroke="#2E9BFF" stroke-width="2.5" stroke-opacity="0.7"/>
+  <ellipse cx="320" cy="464" rx="178" ry="40" fill="#0E3D8A" opacity="0.5"/>
+  <ellipse cx="320" cy="474" rx="240" ry="60" fill="url(#lapPool)" filter="url(#lapSoft)"/>
+  <ellipse cx="320" cy="472" rx="110" ry="18" fill="#7FD4FF" opacity="0.28" filter="url(#lapSoft2)"/>
+
+  <!-- screen -->
+  <g filter="url(#lapGlowF)">
+    <rect x="164" y="96" width="312" height="220" rx="20" fill="url(#lapScreen)"
+          stroke="#2E7CD0" stroke-width="2.5"/>
+    <rect x="182" y="114" width="276" height="184" rx="12" fill="#04101F"/>
+    <!-- screen glow -->
+    <ellipse cx="320" cy="206" rx="130" ry="80" fill="#008CFF" opacity="0.10" filter="url(#lapSoft2)"/>
+
+    <!-- glowing </> code symbol -->
+    <g stroke="#00D9FF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" filter="url(#lapGlowF)">
+      <path d="M280 168 L238 206 L280 244"/>
+      <path d="M360 168 L402 206 L360 244"/>
+      <path d="M342 156 L298 256"/>
+    </g>
+    <g stroke="#BFF3FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M280 168 L238 206 L280 244"/>
+      <path d="M360 168 L402 206 L360 244"/>
+      <path d="M342 156 L298 256"/>
+    </g>
+    <!-- small code dashes under the symbol -->
+    <rect x="252" y="266" width="64" height="8" rx="4" fill="#00A8FF" opacity="0.7"/>
+    <rect x="328" y="266" width="40" height="8" rx="4" fill="#00D9FF" opacity="0.6"/>
+  </g>
+
+  <!-- base -->
+  <g filter="url(#lapGlowF)">
+    <path d="M136 316 L504 316 L544 360 C548 368 542 376 532 376 L108 376 C98 376 92 368 96 360 Z"
+          fill="url(#lapBody)"/>
+    <path d="M136 316 L504 316 L544 360" stroke="#00A8FF" stroke-opacity="0.55" stroke-width="2.5"/>
+    <!-- keyboard dots -->
+    <g fill="#7FE9FF" opacity="0.3">
+      <circle cx="186" cy="340" r="2.6"/><circle cx="208" cy="340" r="2.6"/><circle cx="230" cy="340" r="2.6"/><circle cx="252" cy="340" r="2.6"/><circle cx="274" cy="340" r="2.6"/><circle cx="296" cy="340" r="2.6"/><circle cx="318" cy="340" r="2.6"/><circle cx="340" cy="340" r="2.6"/><circle cx="362" cy="340" r="2.6"/><circle cx="384" cy="340" r="2.6"/><circle cx="406" cy="340" r="2.6"/><circle cx="428" cy="340" r="2.6"/><circle cx="450" cy="340" r="2.6"/>
+      <circle cx="198" cy="352" r="2.6"/><circle cx="220" cy="352" r="2.6"/><circle cx="242" cy="352" r="2.6"/><circle cx="264" cy="352" r="2.6"/><circle cx="286" cy="352" r="2.6"/><circle cx="308" cy="352" r="2.6"/><circle cx="330" cy="352" r="2.6"/><circle cx="352" cy="352" r="2.6"/><circle cx="374" cy="352" r="2.6"/><circle cx="396" cy="352" r="2.6"/><circle cx="418" cy="352" r="2.6"/><circle cx="440" cy="352" r="2.6"/>
+    </g>
+    <rect x="284" y="364" width="72" height="6" rx="3" fill="#0A2240" stroke="#2E7CD0" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- swirl ring front half (over the laptop) -->
+  <path d="M 48 440 A 272 86 0 0 0 592 440" fill="none" stroke="#2E9BFF" stroke-width="14" stroke-opacity="0.3" filter="url(#lapSoft2)"/>
+  <path d="M 48 440 A 272 86 0 0 0 592 440" fill="none" stroke="url(#lapBody)" stroke-opacity="0"/>
+  <path d="M 48 440 A 272 86 0 0 0 592 440" fill="none" stroke="#7FE9FF" stroke-width="4.5" stroke-linecap="round" opacity="0.9" filter="url(#lapGlowF)"/>
+  <circle cx="592" cy="440" r="7" fill="#9FE6FF" filter="url(#lapGlowF)"/>
+  <circle cx="48" cy="440" r="5" fill="#7FD4FF" opacity="0.8" filter="url(#lapGlowF)"/>
+
+  <!-- floating particles -->
+  <circle cx="110" cy="120" r="3" fill="#00D9FF" opacity="0.65"/>
+  <circle cx="530" cy="90" r="2.5" fill="#00A8FF" opacity="0.6"/>
+  <circle cx="565" cy="210" r="2" fill="#7FE9FF" opacity="0.5"/>
+  <circle cx="85" cy="260" r="2.5" fill="#00A8FF" opacity="0.45"/>
+  <circle cx="240" cy="60" r="2" fill="#00D9FF" opacity="0.5"/>
+  <circle cx="470" cy="540" r="3" fill="#00A8FF" opacity="0.4"/>
+  <circle cx="170" cy="540" r="2.5" fill="#7FE9FF" opacity="0.4"/>
+</svg>

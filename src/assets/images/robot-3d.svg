@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="robBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4FAFF"/>
+      <stop offset="1" stop-color="#C3DCF2"/>
+    </linearGradient>
+    <linearGradient id="robAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00A8FF"/>
+      <stop offset="1" stop-color="#0072D6"/>
+    </linearGradient>
+    <radialGradient id="robGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008CFF" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#008CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="robGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <ellipse cx="320" cy="330" rx="240" ry="210" fill="url(#robGlow)"/>
+  <ellipse cx="320" cy="580" rx="150" ry="22" fill="#020B18" opacity="0.5"/>
+
+  <!-- antenna -->
+  <line x1="320" y1="128" x2="320" y2="88" stroke="#8FB6D6" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="320" cy="76" r="14" fill="#00D9FF" filter="url(#robGlowF)"/>
+
+  <!-- head -->
+  <g filter="url(#robGlowF)">
+    <rect x="212" y="120" width="216" height="176" rx="62" fill="url(#robBody)"
+          stroke="#9CC4E4" stroke-width="2"/>
+    <rect x="238" y="156" width="164" height="96" rx="48" fill="#0A1E38"/>
+    <!-- eyes -->
+    <circle cx="286" cy="204" r="17" fill="#00E0FF"/>
+    <circle cx="354" cy="204" r="17" fill="#00E0FF"/>
+    <circle cx="290" cy="199" r="6" fill="#CFF7FF"/>
+    <circle cx="358" cy="199" r="6" fill="#CFF7FF"/>
+    <!-- smile -->
+    <path d="M300 232 Q320 246 340 232" stroke="#00E0FF" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- ear pods -->
+  <rect x="192" y="182" width="26" height="52" rx="13" fill="url(#robAccent)"/>
+  <rect x="422" y="182" width="26" height="52" rx="13" fill="url(#robAccent)"/>
+
+  <!-- body -->
+  <g filter="url(#robGlowF)">
+    <rect x="248" y="308" width="144" height="128" rx="40" fill="url(#robBody)"
+          stroke="#9CC4E4" stroke-width="2"/>
+    <rect x="280" y="332" width="80" height="80" rx="20" fill="#0A1E38"/>
+    <path d="M320 396 C300 380 300 360 312 354 C320 350 320 358 320 362 C320 358 320 350 328 354 C340 360 340 380 320 396 Z"
+          fill="#00E0FF"/>
+  </g>
+
+  <!-- arms: one waving -->
+  <path d="M248 336 C210 344 196 372 200 404" stroke="#C3DCF2" stroke-width="22" stroke-linecap="round"/>
+  <path d="M392 336 C436 320 452 288 448 252" stroke="#C3DCF2" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="448" cy="244" r="17" fill="url(#robAccent)"/>
+  <circle cx="202" cy="410" r="15" fill="url(#robAccent)"/>
+
+  <!-- hover jets -->
+  <path d="M296 452 L296 486 M344 452 L344 486" stroke="#00D9FF" stroke-width="8" stroke-linecap="round" opacity="0.85" filter="url(#robGlowF)"/>
+
+  <!-- particles -->
+  <circle cx="150" cy="180" r="3" fill="#00D9FF" opacity="0.65"/>
+  <circle cx="500" cy="140" r="2.5" fill="#7FE9FF" opacity="0.55"/>
+  <circle cx="530" cy="300" r="2" fill="#00A8FF" opacity="0.5"/>
+  <circle cx="120" cy="330" r="2.5" fill="#00A8FF" opacity="0.4"/>
+  <circle cx="470" cy="520" r="3" fill="#00D9FF" opacity="0.4"/>
+</svg>

@@ -1,0 +1,122 @@
+/* ============================================================
+   Nile Code Academy — Design Tokens
+   Dark theme is the default identity; light theme overrides
+   via [data-theme="light"] on <html>.
+   ============================================================ */
+
+:root {
+  /* ---- Color: brand ---- */
+  --primary: #008CFF;
+  --electric: #00A8FF;
+  --cyan: #00D9FF;
+  --whatsapp: #00D5B0;
+
+  /* ---- Color: surfaces (dark) ---- */
+  --bg-primary: #020B18;
+  --bg-secondary: #06172C;
+  --bg-card: #091D35;
+  --bg-card-raised: #0C2440;
+  --bg-glass: rgba(9, 29, 53, 0.62);
+
+  /* ---- Color: text (dark) ---- */
+  --text-primary: #FFFFFF;
+  --text-secondary: #AFC5DE;
+  --text-muted: #7894B3;
+
+  /* ---- Color: lines & overlays ---- */
+  --border: rgba(0, 140, 255, 0.16);
+  --border-strong: rgba(0, 168, 255, 0.35);
+  --overlay-scrim: rgba(2, 11, 24, 0.72);
+
+  /* ---- Gradients ---- */
+  --grad-primary: linear-gradient(135deg, #008CFF 0%, #00D9FF 100%);
+  --grad-electric: linear-gradient(135deg, #00A8FF 0%, #008CFF 100%);
+  --grad-text: linear-gradient(92deg, #FFFFFF 0%, #9FD8FF 55%, #00D9FF 100%);
+  --grad-cta: linear-gradient(135deg, #008CFF 0%, #00A8FF 60%, #00D9FF 115%);
+
+  /* ---- Typography ---- */
+  --font-heading: "Space Grotesk", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-arabic: "Cairo", "Inter", "Segoe UI", system-ui, sans-serif;
+
+  --fs-hero: clamp(2.45rem, 5.2vw, 4rem);
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.6rem, 3vw, 2.25rem);
+  --fs-h3: clamp(1.2rem, 2vw, 1.5rem);
+  --fs-lead: clamp(1rem, 1.5vw, 1.185rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-tiny: 0.78rem;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 104px;
+  --section-pad: clamp(56px, 8vw, 104px);
+
+  /* ---- Radius ---- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* ---- Elevation & glow ---- */
+  --shadow-card: 0 8px 30px rgba(1, 8, 20, 0.45);
+  --shadow-card-hover: 0 18px 48px rgba(0, 60, 130, 0.35);
+  --glow-blue: 0 0 24px rgba(0, 140, 255, 0.35), 0 0 64px rgba(0, 140, 255, 0.14);
+  --glow-cyan: 0 0 28px rgba(0, 217, 255, 0.35), 0 0 80px rgba(0, 217, 255, 0.12);
+  --glow-whatsapp: 0 0 26px rgba(0, 213, 176, 0.4), 0 0 70px rgba(0, 213, 176, 0.15);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 0.18s var(--ease);
+  --t-med: 0.32s var(--ease);
+  --t-slow: 0.6s var(--ease);
+
+  /* ---- Layout ---- */
+  --container: 1240px;
+  --container-wide: 1400px;
+  --nav-height: 72px;
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+[data-theme="light"] {
+  --bg-primary: #F4F8FE;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-raised: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.78);
+
+  --primary: #0068D6;
+  --electric: #008CFF;
+  --cyan: #0090C8;
+
+  --text-primary: #0A1B30;
+  --text-secondary: #3E5674;
+  --text-muted: #6B82A0;
+
+  --border: rgba(10, 70, 140, 0.12);
+  --border-strong: rgba(0, 140, 255, 0.4);
+  --overlay-scrim: rgba(8, 20, 40, 0.5);
+
+  --grad-text: linear-gradient(92deg, #0A1B30 0%, #0057A8 60%, #008CFF 100%);
+  --grad-cta: linear-gradient(135deg, #008CFF 0%, #00A8FF 60%, #00D9FF 115%);
+
+  --shadow-card: 0 8px 26px rgba(16, 44, 84, 0.10);
+  --shadow-card-hover: 0 18px 44px rgba(16, 60, 120, 0.18);
+  --glow-blue: 0 0 22px rgba(0, 140, 255, 0.22), 0 0 56px rgba(0, 140, 255, 0.10);
+  --glow-cyan: 0 0 22px rgba(0, 160, 220, 0.22), 0 0 60px rgba(0, 160, 220, 0.10);
+}

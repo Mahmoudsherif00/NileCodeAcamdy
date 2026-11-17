@@ -1,0 +1,358 @@
+/* ============================================================
+   Shared home-section styles:
+   roadmap, prompt comparison, mini roadmap, how-it-works,
+   safety banner, final CTA.
+   ============================================================ */
+
+.section-head { margin-bottom: var(--space-7); }
+
+/* ------------------------------------------------------------
+   Roadmaps (What You Will Learn + compact preview)
+   ------------------------------------------------------------ */
+.roadmap,
+.mini-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.roadmap__item-wrap,
+.mini-roadmap__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  border-radius: var(--r-md);
+  transition: background-color var(--t-med);
+}
+.roadmap__item-wrap:hover,
+.mini-roadmap__item:hover {
+  background: rgba(0, 140, 255, 0.05);
+}
+
+.roadmap__node,
+.mini-roadmap__node {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--space-3);
+}
+
+.roadmap__line,
+.mini-roadmap__line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 168, 255, 0.45));
+}
+[dir="rtl"] .roadmap__line,
+[dir="rtl"] .mini-roadmap__line {
+  background: linear-gradient(-90deg, transparent, rgba(0, 168, 255, 0.45));
+}
+.roadmap__line--right,
+.mini-roadmap__line--right {
+  background: linear-gradient(90deg, rgba(0, 168, 255, 0.45), transparent);
+}
+[dir="rtl"] .roadmap__line--right,
+[dir="rtl"] .mini-roadmap__line--right {
+  background: linear-gradient(-90deg, rgba(0, 168, 255, 0.45), transparent);
+}
+.roadmap__item-wrap:first-child .roadmap__line--left,
+.roadmap__item-wrap:last-child .roadmap__line--right,
+.mini-roadmap__item:first-child .mini-roadmap__line--left,
+.mini-roadmap__item:last-child .mini-roadmap__line--right {
+  visibility: hidden;
+}
+
+.roadmap__icon.icon-bubble {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.roadmap__icon svg { width: 26px; height: 26px; }
+
+.mini-roadmap__num {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--cyan);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(0, 217, 255, 0.2), transparent 60%),
+    var(--bg-card-raised);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--glow-blue);
+}
+
+.roadmap__title,
+.mini-roadmap__title {
+  font-size: 1.06rem;
+}
+
+.roadmap__desc,
+.mini-roadmap__desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 230px;
+}
+
+@media (max-width: 960px) {
+  .roadmap,
+  .mini-roadmap { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  .roadmap__item-wrap:nth-child(odd) .roadmap__line--left,
+  .mini-roadmap__item:nth-child(odd) .mini-roadmap__line--left { visibility: hidden; }
+}
+
+@media (max-width: 560px) {
+  .roadmap,
+  .mini-roadmap {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .roadmap__node,
+  .mini-roadmap__node { width: auto; }
+  .roadmap__line--left,
+  .mini-roadmap__line--left { visibility: hidden !important; }
+  .roadmap__item-wrap,
+  .mini-roadmap__item {
+    flex-direction: row;
+    text-align: start;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  .roadmap__item-wrap > div:not(.roadmap__node),
+  .mini-roadmap__item > div:not(.mini-roadmap__node),
+  .roadmap__item-wrap > h3,
+  .mini-roadmap__item > h3 { text-align: start; }
+  .roadmap__node { flex-direction: column; align-items: center; margin-bottom: 0; }
+  .mini-roadmap__node { flex-direction: column; margin-bottom: 0; }
+  .roadmap__line--right,
+  .mini-roadmap__line--right {
+    flex: 1;
+    width: 2px;
+    height: 100%;
+    min-height: 42px;
+    background: linear-gradient(180deg, rgba(0, 168, 255, 0.45), transparent);
+  }
+  .roadmap__item-wrap:last-child .roadmap__line--right,
+  .mini-roadmap__item:last-child .mini-roadmap__line--right { display: none; }
+}
+
+/* ------------------------------------------------------------
+   Prompt comparison
+   ------------------------------------------------------------ */
+.prompt {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: var(--space-4);
+}
+
+.prompt__card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  gap: var(--space-4);
+}
+
+.prompt__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  border-radius: var(--r-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.prompt__badge--weak {
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  background: rgba(120, 148, 179, 0.08);
+}
+
+.prompt__badge--good {
+  color: var(--cyan);
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  background: rgba(0, 168, 255, 0.08);
+  box-shadow: 0 0 18px rgba(0, 168, 255, 0.15);
+}
+
+.prompt__example {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.prompt__preview {
+  border-radius: var(--r-md);
+  border: 1px dashed var(--border);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 120px;
+  justify-content: flex-end;
+}
+
+.prompt__preview--good {
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  background:
+    radial-gradient(220px 120px at 50% 100%, rgba(0, 140, 255, 0.12), transparent 80%);
+  box-shadow: inset 0 0 30px rgba(0, 140, 255, 0.06);
+}
+
+.prompt__mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 84px;
+}
+
+.prompt__mini-chart span {
+  flex: 1;
+  border-radius: 6px 6px 2px 2px;
+}
+
+.prompt__preview--weak .prompt__mini-chart span {
+  background: rgba(120, 148, 179, 0.25);
+}
+
+.prompt__preview--good .prompt__mini-chart span {
+  background: linear-gradient(180deg, #00D9FF, #0062C8);
+  box-shadow: 0 0 12px rgba(0, 168, 255, 0.35);
+}
+
+.prompt__mini-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8);
+}
+
+.prompt__caption-line {
+  flex: 1;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba(0, 168, 255, 0.25);
+}
+
+.prompt__result {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.prompt__arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt__arrow-line {
+  width: 14px;
+  height: 2px;
+  background: rgba(0, 168, 255, 0.5);
+}
+
+.prompt__arrow-bubble { width: 58px; height: 58px; }
+
+[dir="rtl"] .prompt__arrow-bubble svg { transform: scaleX(-1); }
+
+@media (max-width: 900px) {
+  .prompt { grid-template-columns: 1fr; }
+  .prompt__arrow {
+    justify-content: center;
+  }
+  .prompt__arrow-bubble svg { transform: rotate(90deg); }
+  [dir="rtl"] .prompt__arrow-bubble svg { transform: rotate(90deg) scaleX(-1); }
+}
+
+/* ------------------------------------------------------------
+   How it works
+   ------------------------------------------------------------ */
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.5vw, 26px);
+}
+
+.how__card {
+  position: relative;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  overflow: hidden;
+}
+
+.how__step-num {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 18px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: rgba(0, 168, 255, 0.16);
+  letter-spacing: 0.02em;
+}
+
+.how__title { font-size: 1.08rem; }
+
+.how__desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) { .how__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .how__grid { grid-template-columns: 1fr; } }
+
+/* ------------------------------------------------------------
+   Final CTA
+   ------------------------------------------------------------ */
+.final-cta {
+  text-align: center;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 56px);
+  overflow: hidden;
+}
+
+.final-cta__glow {
+  width: 460px;
+  height: 300px;
+  top: -170px;
+  inset-inline-start: 12%;
+}
+.final-cta__glow--b {
+  top: auto;
+  bottom: -190px;
+  inset-inline-start: auto;
+  inset-inline-end: 8%;
+}
+
+.final-cta__title {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-3);
+}
+
+.final-cta__desc {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  font-size: var(--fs-lead);
+}
