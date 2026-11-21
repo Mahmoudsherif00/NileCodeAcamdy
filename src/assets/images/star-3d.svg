@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="starFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4FDBFF"/>
+      <stop offset="0.5" stop-color="#00A8FF"/>
+      <stop offset="1" stop-color="#0062C8"/>
+    </linearGradient>
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00A8FF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00A8FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="starGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starSoft" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <circle cx="320" cy="320" r="270" fill="url(#starGlow)"/>
+  <ellipse cx="240" cy="200" rx="130" ry="90" fill="#00A8FF" opacity="0.10" filter="url(#starSoft)"/>
+
+  <!-- rays -->
+  <g stroke="#00D9FF" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round">
+    <line x1="320" y1="60" x2="320" y2="18"/>
+    <line x1="320" y1="580" x2="320" y2="622"/>
+    <line x1="60" y1="320" x2="18" y2="320"/>
+    <line x1="580" y1="320" x2="622" y2="320"/>
+    <line x1="126" y1="126" x2="96" y2="96"/>
+    <line x1="514" y1="126" x2="544" y2="96"/>
+    <line x1="126" y1="514" x2="96" y2="544"/>
+    <line x1="514" y1="514" x2="544" y2="544"/>
+  </g>
+
+  <!-- star -->
+  <g filter="url(#starGlowF)">
+    <path d="M320 96 L381 251 L547 259 L416 360 L462 519 L320 428 L178 519 L224 360 L93 259 L259 251 Z"
+          fill="url(#starFill)"/>
+    <path d="M320 96 L381 251 L547 259 L416 360 L462 519 L320 428 L178 519 L224 360 L93 259 L259 251 Z"
+          fill="none" stroke="#9BEBFF" stroke-opacity="0.9" stroke-width="3"/>
+    <path d="M320 140 L368 262 L478 268 L390 340 L420 458 L320 392 L220 458 L250 340 L162 268 L272 262 Z"
+          fill="#BFF3FF" opacity="0.18"/>
+  </g>
+  <circle cx="320" cy="284" r="26" fill="#EAFBFF" opacity="0.25" filter="url(#starGlowF)"/>
+
+  <!-- particles -->
+  <circle cx="150" cy="180" r="3.5" fill="#00D9FF" opacity="0.7"/>
+  <circle cx="500" cy="150" r="2.5" fill="#7FE9FF" opacity="0.6"/>
+  <circle cx="540" cy="420" r="3" fill="#00A8FF" opacity="0.55"/>
+  <circle cx="110" cy="430" r="2.5" fill="#00D9FF" opacity="0.5"/>
+  <circle cx="410" cy="80" r="2" fill="#7FE9FF" opacity="0.5"/>
+  <circle cx="220" cy="560" r="2.5" fill="#00A8FF" opacity="0.4"/>
+</svg>

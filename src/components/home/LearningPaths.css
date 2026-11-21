@@ -1,0 +1,106 @@
+/* ============================================================
+   Learning Paths cards — big illustration top, compact bottom
+   row: title + tagline + circular arrow button.
+   ============================================================ */
+.paths-section { scroll-margin-top: 90px; }
+
+.paths__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 3vw, 32px);
+  margin-top: var(--space-8);
+}
+
+.path-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+}
+
+/* ---- illustration: fills the top ~55-60% of the card ---- */
+.path-card__illustration {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(230px, 24vw, 310px);
+  padding: var(--space-5) var(--space-5) 0;
+  background:
+    radial-gradient(360px 220px at 50% 92%, rgba(0, 140, 255, 0.16), transparent 78%);
+}
+
+.path-card__illustration img {
+  width: min(88%, 300px);
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform var(--t-slow);
+}
+
+.path-card:hover .path-card__illustration img {
+  transform: scale(1.06) translateY(-4px);
+}
+
+/* ---- bottom row: title + tagline on one side, arrow on the other ---- */
+.path-card__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border-top: 1px solid var(--border);
+}
+
+.path-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.path-card__title {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.path-card__tagline {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* circular arrow button */
+.path-card__go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #FFFFFF;
+  background: var(--grad-cta);
+  box-shadow: var(--glow-blue);
+  transition: transform var(--t-med), box-shadow var(--t-med), filter var(--t-fast);
+}
+
+.path-card:hover .path-card__go {
+  filter: brightness(1.1);
+  transform: translateX(4px);
+  box-shadow: 0 0 30px rgba(0, 140, 255, 0.55), 0 8px 22px rgba(0, 90, 200, 0.35);
+}
+
+[dir="rtl"] .path-card__go svg { transform: scaleX(-1); }
+[dir="rtl"] .path-card:hover .path-card__go { transform: translateX(-4px); }
+
+/* hover accents */
+.path-card--teens:hover { box-shadow: var(--shadow-card-hover), 0 0 40px rgba(0, 140, 255, 0.22); }
+.path-card--adults:hover { box-shadow: var(--shadow-card-hover), 0 0 40px rgba(0, 217, 255, 0.18); }
+
+@media (max-width: 860px) {
+  .paths__grid { grid-template-columns: 1fr; }
+  .path-card__illustration { height: clamp(190px, 44vw, 260px); }
+  .path-card__title { font-size: 1.32rem; }
+  .path-card__tagline { font-size: 0.84rem; }
+  .path-card__go { width: 42px; height: 42px; }
+}

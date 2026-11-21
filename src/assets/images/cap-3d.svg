@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <defs>
+    <linearGradient id="capBoard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A4B85"/>
+      <stop offset="0.55" stop-color="#123B6E"/>
+      <stop offset="1" stop-color="#0A2444"/>
+    </linearGradient>
+    <linearGradient id="capEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7FE9FF"/>
+      <stop offset="0.5" stop-color="#00A8FF"/>
+      <stop offset="1" stop-color="#0062C8"/>
+    </linearGradient>
+    <linearGradient id="capBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12375F"/>
+      <stop offset="1" stop-color="#081C38"/>
+    </linearGradient>
+    <linearGradient id="capPlatform" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B5FB8"/>
+      <stop offset="0.6" stop-color="#0E3D8A"/>
+      <stop offset="1" stop-color="#082554"/>
+    </linearGradient>
+    <linearGradient id="capTassel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC24D"/>
+      <stop offset="1" stop-color="#F08A1D"/>
+    </linearGradient>
+    <radialGradient id="capGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008CFF" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#008CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="capPool" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3FA9FF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#3FA9FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="capGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="capSoft" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="capSoft2" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <!-- ambient glow -->
+  <ellipse cx="320" cy="400" rx="260" ry="190" fill="url(#capGlow)"/>
+
+  <!-- glowing platform disc -->
+  <ellipse cx="320" cy="470" rx="230" ry="58" fill="url(#capPlatform)" opacity="0.9"/>
+  <ellipse cx="320" cy="470" rx="230" ry="58" fill="none" stroke="url(#capEdge)" stroke-width="2.5" stroke-opacity="0.85"/>
+  <ellipse cx="320" cy="464" rx="196" ry="44" fill="#0E3D8A" opacity="0.55"/>
+  <ellipse cx="320" cy="474" rx="252" ry="66" fill="url(#capPool)" filter="url(#capSoft)"/>
+  <ellipse cx="320" cy="472" rx="120" ry="20" fill="#7FD4FF" opacity="0.30" filter="url(#capSoft2)"/>
+
+  <!-- swirl ring around the platform (elliptical, glow) -->
+  <ellipse cx="320" cy="462" rx="268" ry="78" fill="none" stroke="#00A8FF" stroke-width="10" stroke-opacity="0.22" filter="url(#capSoft2)"/>
+  <path d="M 52 462 A 268 78 0 0 0 588 462" fill="none" stroke="url(#capEdge)" stroke-width="5" stroke-linecap="round" opacity="0.9" filter="url(#capGlowF)"/>
+  <path d="M 52 462 A 268 78 0 0 1 588 462" fill="none" stroke="#2E9BFF" stroke-width="2.5" stroke-opacity="0.4"/>
+  <circle cx="588" cy="462" r="7" fill="#9FE6FF" filter="url(#capGlowF)"/>
+  <circle cx="52" cy="462" r="5" fill="#7FD4FF" opacity="0.8" filter="url(#capGlowF)"/>
+
+  <!-- cap base (head part) -->
+  <path d="M222 396 C222 316 268 270 320 270 C372 270 418 316 418 396
+           C418 410 406 418 390 418 L250 418 C234 418 222 410 222 396 Z"
+        fill="url(#capBase)"/>
+  <path d="M248 402 C248 344 284 306 320 306" stroke="#2E7CD0" stroke-opacity="0.6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M320 418 L320 440" stroke="#0A2444" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- mortarboard (diamond) -->
+  <g filter="url(#capGlowF)">
+    <path d="M320 218 L572 298 L320 378 L68 298 Z" fill="url(#capBoard)"/>
+    <path d="M320 218 L572 298 L320 378 L68 298 Z" fill="none"
+          stroke="url(#capEdge)" stroke-width="3" stroke-opacity="0.95"/>
+    <path d="M320 240 L512 298 L320 356 L128 298 Z" fill="#0D2A50" opacity="0.6"/>
+    <path d="M68 298 L320 378 L572 298" fill="none" stroke="#00D9FF" stroke-width="1.6" stroke-opacity="0.5"/>
+    <ellipse cx="320" cy="290" rx="28" ry="11" fill="#0A2140"/>
+    <rect x="313" y="264" width="14" height="28" rx="7" fill="#123B6E" stroke="#00A8FF" stroke-opacity="0.7"/>
+  </g>
+
+  <!-- gold tassel -->
+  <path d="M548 300 C584 322 594 366 586 414" stroke="url(#capTassel)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="548" cy="300" r="10" fill="#FFC24D" filter="url(#capGlowF)"/>
+  <g filter="url(#capGlowF)">
+    <path d="M572 414 L602 414 L596 476 L578 476 Z" fill="url(#capTassel)"/>
+    <path d="M581 414 L593 414 L589 476 L585 476 Z" fill="#FFE1A3" opacity="0.75"/>
+  </g>
+  <circle cx="587" cy="416" r="8" fill="#FFD98A"/>
+
+  <!-- floating particles -->
+  <circle cx="150" cy="200" r="3.5" fill="#00D9FF" opacity="0.75"/>
+  <circle cx="500" cy="160" r="2.5" fill="#00A8FF" opacity="0.65"/>
+  <circle cx="565" cy="220" r="2" fill="#7FE9FF" opacity="0.55"/>
+  <circle cx="110" cy="320" r="2.5" fill="#00A8FF" opacity="0.5"/>
+  <circle cx="205" cy="140" r="2" fill="#00D9FF" opacity="0.5"/>
+  <circle cx="430" cy="520" r="3" fill="#00A8FF" opacity="0.45"/>
+  <circle cx="205" cy="520" r="2.5" fill="#7FE9FF" opacity="0.4"/>
+  <circle cx="330" cy="120" r="2.5" fill="#00D9FF" opacity="0.45"/>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none">
+  <defs>
+    <linearGradient id="anaPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E3158"/>
+      <stop offset="1" stop-color="#081C36"/>
+    </linearGradient>
+    <linearGradient id="anaBar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0062C8"/>
+      <stop offset="1" stop-color="#00D9FF"/>
+    </linearGradient>
+    <radialGradient id="anaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008CFF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#008CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="anaGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <ellipse cx="360" cy="280" rx="300" ry="220" fill="url(#anaGlow)"/>
+
+  <!-- connector lines -->
+  <g stroke="#00A8FF" stroke-opacity="0.4" stroke-width="1.8" stroke-dasharray="2 8" stroke-linecap="round">
+    <path d="M250 200 C300 170 340 160 388 168"/>
+    <path d="M470 260 C500 280 510 300 512 330"/>
+    <path d="M240 330 C280 360 320 372 356 376"/>
+  </g>
+
+  <!-- panel 1: bar chart -->
+  <g filter="url(#anaGlowF)">
+    <rect x="96" y="150" width="200" height="160" rx="20" fill="url(#anaPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <rect x="120" y="242" width="22" height="44" rx="6" fill="url(#anaBar)"/>
+    <rect x="152" y="218" width="22" height="68" rx="6" fill="url(#anaBar)"/>
+    <rect x="184" y="192" width="22" height="94" rx="6" fill="url(#anaBar)" opacity="0.95"/>
+    <rect x="216" y="230" width="22" height="56" rx="6" fill="url(#anaBar)" opacity="0.85"/>
+    <rect x="248" y="170" width="22" height="116" rx="6" fill="url(#anaBar)"/>
+    <line x1="120" y1="286" x2="272" y2="286" stroke="#7FE9FF" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+  <circle cx="270" cy="164" r="5" fill="#00D9FF" filter="url(#anaGlowF)"/>
+
+  <!-- panel 2: line chart -->
+  <g filter="url(#anaGlowF)">
+    <rect x="380" y="112" width="224" height="150" rx="20" fill="url(#anaPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <path d="M404 232 L436 196 L468 208 L502 164 L536 180 L572 140"
+          stroke="#00D9FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M404 232 L436 196 L468 208 L502 164 L536 180 L572 140 L572 236 L404 236 Z"
+          fill="#00A8FF" opacity="0.10"/>
+    <circle cx="572" cy="140" r="6" fill="#7FE9FF" filter="url(#anaGlowF)"/>
+    <circle cx="502" cy="164" r="4.5" fill="#00D9FF"/>
+  </g>
+
+  <!-- panel 3: progress ring -->
+  <g filter="url(#anaGlowF)">
+    <rect x="440" y="300" width="150" height="150" rx="20" fill="url(#anaPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <circle cx="515" cy="375" r="46" stroke="#0B2547" stroke-width="12"/>
+    <path d="M515 329 A46 46 0 1 1 474 393" stroke="#00D9FF" stroke-width="12"
+          stroke-linecap="round" fill="none"/>
+    <circle cx="515" cy="375" r="5" fill="#7FE9FF"/>
+  </g>
+
+  <!-- small node -->
+  <g filter="url(#anaGlowF)">
+    <rect x="180" y="360" width="120" height="90" rx="18" fill="url(#anaPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <path d="M204 428 L232 400 L256 416 L280 386" stroke="#00A8FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- particles -->
+  <circle cx="120" cy="110" r="3" fill="#00D9FF" opacity="0.6"/>
+  <circle cx="640" cy="90" r="2.5" fill="#7FE9FF" opacity="0.55"/>
+  <circle cx="660" cy="250" r="2" fill="#00A8FF" opacity="0.5"/>
+  <circle cx="80" cy="420" r="2.5" fill="#00A8FF" opacity="0.4"/>
+  <circle cx="620" cy="490" r="3" fill="#00D9FF" opacity="0.4"/>
+</svg>

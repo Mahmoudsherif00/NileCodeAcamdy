@@ -1,0 +1,86 @@
+/* ============================================================
+   Nile Code Academy — Animations
+   Lightweight, purposeful motion. All disabled when the user
+   prefers reduced motion.
+   ============================================================ */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes float-y-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(18px, -24px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ---- Entrance reveal (JS adds .is-visible) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity var(--t-slow), transform var(--t-slow);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Utility animation classes ---- */
+.anim-float { animation: float-y 6s ease-in-out infinite; }
+.anim-float-soft { animation: float-y-soft 5s ease-in-out infinite; }
+.anim-float-delay { animation: float-y 7s ease-in-out 1.2s infinite; }
+.anim-pulse { animation: pulse-glow 3.2s ease-in-out infinite; }
+.anim-drift { animation: drift 14s ease-in-out infinite; }
+.anim-spin-slow { animation: spin-slow 44s linear infinite; }
+
+.anim-delay-1 { animation-delay: 0.15s; }
+.anim-delay-2 { animation-delay: 0.3s; }
+.anim-delay-3 { animation-delay: 0.45s; }
+.anim-delay-4 { animation-delay: 0.6s; }
+
+/* Hero entrance */
+.hero-enter { animation: fade-up 0.8s var(--ease) both; }
+.hero-enter-1 { animation: fade-up 0.8s var(--ease) 0.12s both; }
+.hero-enter-2 { animation: fade-up 0.8s var(--ease) 0.24s both; }
+.hero-enter-3 { animation: fade-up 0.8s var(--ease) 0.36s both; }
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

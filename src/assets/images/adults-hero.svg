@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" fill="none">
+  <defs>
+    <linearGradient id="adSuit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B3E66"/>
+      <stop offset="1" stop-color="#0C2444"/>
+    </linearGradient>
+    <linearGradient id="adSkin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F5C9A8"/>
+      <stop offset="1" stop-color="#D99A6F"/>
+    </linearGradient>
+    <linearGradient id="adPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E3158"/>
+      <stop offset="1" stop-color="#081C36"/>
+    </linearGradient>
+    <radialGradient id="adGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#008CFF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#008CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="adGlowF" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <ellipse cx="380" cy="320" rx="310" ry="260" fill="url(#adGlow)"/>
+  <ellipse cx="380" cy="602" rx="150" ry="20" fill="#020B18" opacity="0.55"/>
+
+  <!-- legs -->
+  <g fill="#0F2A4C">
+    <rect x="342" y="470" width="30" height="112" rx="14"/>
+    <rect x="388" y="470" width="30" height="112" rx="14"/>
+    <path d="M330 582 L376 582 C380 582 382 586 380 592 L332 592 C324 592 322 586 330 582 Z"/>
+    <path d="M384 582 L430 582 C438 582 436 592 428 592 L380 592 C378 586 380 582 384 582 Z"/>
+  </g>
+  <path d="M342 470 C330 440 330 420 340 402" stroke="#0F2A4C" stroke-width="0" />
+
+  <!-- torso (blazer) -->
+  <path d="M328 330 C336 306 356 296 380 296 C404 296 424 306 432 330
+           L452 468 C452 486 438 494 380 494 C322 494 308 486 308 468 Z"
+        fill="url(#adSuit)"/>
+  <!-- shirt -->
+  <path d="M356 306 L380 356 L404 306 C396 300 388 298 380 298 C372 298 364 300 356 306 Z" fill="#DFF1FF"/>
+  <!-- tie -->
+  <path d="M380 356 L392 342 L386 330 L380 336 L374 330 L368 342 Z" fill="#00A8FF"/>
+  <path d="M380 356 L392 400 L380 412 L368 400 Z" fill="#008CFF"/>
+  <!-- lapels -->
+  <path d="M356 306 L344 366 L366 342 Z" fill="#0C2444"/>
+  <path d="M404 306 L416 366 L394 342 Z" fill="#0C2444"/>
+
+  <!-- left arm (down) -->
+  <path d="M330 340 C310 380 306 420 316 452" stroke="url(#adSuit)" stroke-width="27" stroke-linecap="round"/>
+  <circle cx="318" cy="458" r="12" fill="url(#adSkin)"/>
+
+  <!-- right arm (holding tablet up) -->
+  <path d="M430 340 C452 366 462 392 462 412" stroke="url(#adSuit)" stroke-width="27" stroke-linecap="round"/>
+  <circle cx="462" cy="418" r="12" fill="url(#adSkin)"/>
+
+  <!-- tablet -->
+  <g filter="url(#adGlowF)">
+    <rect x="428" y="368" width="96" height="72" rx="12" fill="#0A1E38" stroke="#1E5B9E" stroke-width="2"
+          transform="rotate(-8 476 404)"/>
+    <g transform="rotate(-8 476 404)">
+      <rect x="444" y="384" width="34" height="9" rx="4.5" fill="#00D9FF"/>
+      <rect x="444" y="400" width="52" height="8" rx="4" fill="#2E7FD6"/>
+      <rect x="444" y="414" width="26" height="8" rx="4" fill="#00A8FF"/>
+      <path d="M492 382 L504 396 L514 380" stroke="#7FE9FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <ellipse cx="470" cy="470" rx="60" ry="14" fill="#00D9FF" opacity="0.10" filter="url(#adGlowF)"/>
+
+  <!-- head -->
+  <circle cx="380" cy="240" r="54" fill="url(#adSkin)"/>
+  <circle cx="324" cy="248" r="10" fill="url(#adSkin)"/>
+  <circle cx="436" cy="248" r="10" fill="url(#adSkin)"/>
+
+  <!-- hair (short, neat) -->
+  <path d="M326 240 C326 196 350 178 380 178 C410 178 434 196 434 240
+           C434 224 424 210 410 210 C414 200 404 192 394 196 C388 186 372 184 364 192
+           C348 186 332 198 334 214 C328 220 326 228 326 240 Z" fill="#131F30"/>
+  <path d="M342 196 C360 186 400 186 418 196" stroke="#0B1523" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- glasses -->
+  <g stroke="#9FD8FF" stroke-width="3.5" fill="none" opacity="0.95">
+    <rect x="340" y="234" width="30" height="22" rx="9"/>
+    <rect x="390" y="234" width="30" height="22" rx="9"/>
+    <path d="M370 243 L390 243"/>
+    <path d="M340 244 L328 240"/>
+    <path d="M420 244 L432 240"/>
+  </g>
+  <!-- face -->
+  <circle cx="364" cy="266" r="4.5" fill="#182B45"/>
+  <circle cx="396" cy="266" r="4.5" fill="#182B45"/>
+  <path d="M368 280 Q380 290 392 280" stroke="#A96A44" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- floating analytics panels -->
+  <g filter="url(#adGlowF)">
+    <rect x="528" y="120" width="180" height="132" rx="18" fill="url(#adPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <rect x="552" y="196" width="18" height="34" rx="5" fill="#00A8FF"/>
+    <rect x="580" y="176" width="18" height="54" rx="5" fill="#00D9FF"/>
+    <rect x="608" y="158" width="18" height="72" rx="5" fill="#00A8FF" opacity="0.9"/>
+    <rect x="636" y="186" width="18" height="44" rx="5" fill="#00D9FF" opacity="0.8"/>
+    <line x1="552" y1="230" x2="672" y2="230" stroke="#7FE9FF" stroke-opacity="0.35" stroke-width="2"/>
+  </g>
+  <g filter="url(#adGlowF)">
+    <rect x="80" y="140" width="170" height="120" rx="18" fill="url(#adPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <path d="M104 226 L134 194 L164 206 L196 168 L228 184"
+          stroke="#00D9FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="228" cy="184" r="5" fill="#7FE9FF"/>
+  </g>
+  <g filter="url(#adGlowF)">
+    <rect x="556" y="300" width="140" height="120" rx="18" fill="url(#adPanel)" stroke="#1E5B9E" stroke-width="2"/>
+    <circle cx="626" cy="356" r="34" stroke="#0B2547" stroke-width="10"/>
+    <path d="M626 322 A34 34 0 1 1 596 372" stroke="#00D9FF" stroke-width="10" stroke-linecap="round" fill="none"/>
+  </g>
+  <g stroke="#00A8FF" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="2 8" stroke-linecap="round">
+    <path d="M250 200 C300 230 330 244 356 252"/>
+    <path d="M520 200 C480 220 460 236 448 250"/>
+    <path d="M548 340 C510 350 488 372 480 396"/>
+  </g>
+
+  <!-- particles -->
+  <circle cx="120" cy="300" r="3" fill="#00D9FF" opacity="0.6"/>
+  <circle cx="660" cy="80" r="2.5" fill="#7FE9FF" opacity="0.55"/>
+  <circle cx="240" cy="90" r="2" fill="#00A8FF" opacity="0.5"/>
+  <circle cx="540" cy="460" r="3" fill="#00D9FF" opacity="0.4"/>
+  <circle cx="90" cy="440" r="2.5" fill="#00A8FF" opacity="0.4"/>
+</svg>
